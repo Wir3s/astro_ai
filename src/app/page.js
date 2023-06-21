@@ -1,21 +1,30 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
+import Link from "next/link";
+
+const signs = ["Capricorn"]
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
         <div>
+          {signs.map((sign, index) => (
+            <div key={index} className="flex items-center space-x-2">
+              <Image src={`/images/${sign.toLowerCase()}.png`} alt ={`${sign} icon`} width={32} height={32} />
+              <Link href={`/${sign.toLowerCase()}`}>
+                {sign}
+              </Link>
+              </div>
+          ))}
+          {/* <Link href="/capricorn">Cap</Link> */}
+
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -91,5 +100,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
