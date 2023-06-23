@@ -2,23 +2,44 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 
-const signs = ["Capricorn"]
+const signs = [
+  "Capricorn",
+  "Aries",
+  "Taurus",
+  "Aquarius",
+  "Cancer",
+  "Gemini",
+  "Leo",
+  "Libra",
+  "Pisces",
+  "Sagittarius",
+  "Scorpio",
+  "Virgo",
+];
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <div>
+        <div className="flex flex-wrap justify-center">
           {signs.map((sign, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <Image src={`/images/${sign.toLowerCase()}.png`} alt ={`${sign} icon`} width={32} height={32} />
+            <div
+              key={index}
+              className="flex flex-col items-center m-4 md:w-1/4 lg:w-1/6"
+            >
               <Link href={`/${sign.toLowerCase()}`}>
+                <Image
+                  src={`/images/${sign.toLowerCase()}_icon.svg`}
+                  alt={`${sign} icon`}
+                  width={120}
+                  height={120}
+                />
                 {sign}
               </Link>
-              </div>
+            </div>
           ))}
           {/* <Link href="/capricorn">Cap</Link> */}
-
+          {/* 
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
@@ -97,7 +118,8 @@ export default function Home() {
           <p>
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
-        </a>
+        </a> */}
+        </div>
       </div>
     </main>
   );
