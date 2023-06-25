@@ -9,6 +9,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
+  --primary-background: radial-gradient(
+  ellipse 160% 50% at 50% 97%,  
+ yellow, 2%, orange, pink 40%, blue 160%
+  );
+
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
     #16abff33 0deg,

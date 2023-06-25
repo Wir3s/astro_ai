@@ -16,6 +16,8 @@
   width: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+  background: var(--primary-background);
+  color:white;
 }
 
 .description a {
@@ -25,9 +27,9 @@
   gap: 0.5rem;
 }
 
-.description a:hover {
+/* .description a:hover {
   background: var(--primary-glow);
-}
+} */
 
 .description p {
   position: relative;
