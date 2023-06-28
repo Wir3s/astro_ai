@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <h1>An Insightful Collaboration</h1>
+        <h1>An Insightful Collaboration Between Human and AI</h1>
         <div className="flex flex-wrap justify-center">
           {signs.map((sign, index) => (
             <div

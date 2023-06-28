@@ -1,11 +1,14 @@
 import Image from "next/image";
 import styles from "../page.module.css";
-import DateToday from "../components/DateToday"
+import DateToday from "../components/DateToday";
+import Comments from "../components/Comments";
+import Header from "../components/Header";
 
 
-export default function Capricorn() {
+export default function Aries() {
   return (
     <main className={styles.main}>
+      <Header />
       <DateToday />
       <div className={styles.description}>
         <p>
@@ -41,6 +44,9 @@ export default function Capricorn() {
           always be ready to welcome the refreshing rain of relaxation and
           reflection when it comes.
         </p>
+      </div>
+      <div className={styles.comments}>
+      <Comments />
       </div>
     </main>
   );
