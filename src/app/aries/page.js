@@ -4,7 +4,6 @@ import DateToday from "../components/DateToday";
 import Comments from "../components/Comments";
 import Header from "../components/Header";
 
-
 export default function Aries() {
   return (
     <main className={styles.main}>
@@ -12,41 +11,48 @@ export default function Aries() {
       <DateToday />
       <div className={styles.description}>
         <p>
-          Today, Aries, the heat and vibrancy of the day mirrors your own
-          spirited energy. The Sun has shone steadily, just as your
-          determination carries you persistently through your pursuits. However,
-          just as the earth craves the refreshing rain after a long dry spell,
-          remember that it's also important to cool down, refresh, and take time
-          for self-care amidst the action and the go-getting.
-          <br /><br />
-          The summer events represent the warmth and love in your life. Cherish
-          these connections, for they form the bedrock of your inner strength.
-          It's also an opportunity for you to channel your natural leadership.
-          Help organize activities, take the initiative in planning, but
-          remember to also listen and work together with others. Your enthusiasm
-          can be a catalyst for an unforgettable interaction.
-          <br /><br />
-          While you shine in the limelight, don't forget to also take a step
-          back and gaze at the starry skies above. They can remind you of your
-          place in the grand scheme of things, keeping your ego in check.
-          <br /><br />
-          And if you find yourself hearing the birds chirping, take a moment to
-          pause and appreciate their song. It can help to bring you back to the
-          present moment and remind you of the simple pleasures in life.
-          <br /><br />
-          Today might be a day of activity, Aries, but in this bustling
-          environment, don't forget to find moments of calm. Harness the
-          grounding energy of nature to keep your fiery spirit balanced.
-          Remember, true leadership lies in the balance of action and
-          understanding, speaking and listening, doing and being.
-          <br/><br />
-          Stay vibrant and resilient, Aries. Embrace the heat of the day, but
-          always be ready to welcome the refreshing rain of relaxation and
-          reflection when it comes.
+          "Today, Aries, you may feel the pulse of summer in full swing. The
+          world is buzzing around you, active and lively with the vibrancy of
+          long, sunny days. Family and connections are at the forefront,
+          bringing warmth and love into your life. Yet beneath the buzz, you may
+          also sense an undercurrent of restlessness, a yearning for change.
+          <br />
+          <br />
+          This is a potent time for reflection, Aries. Amidst the flurry of
+          summer events and gatherings, take a moment to retreat into your own
+          space. In this solitude, you can chart the course for the next phase
+          of your life.
+          <br />
+          <br />
+          Your discontent is not a burden, Aries, but a catalyst for
+          transformation. Listen to the restless stirrings of your heart. What
+          changes are you yearning for? What parts of your life feel stagnant,
+          and how can you infuse them with new energy?
+          <br />
+          <br />
+          This thick, oppressive drone of summer, with its lethargy and
+          complacence, is also a challenge for you to rise above. It's a call to
+          awaken your dormant potentials and to confront the parts of your life
+          that you've outgrown.
+          <br />
+          <br />
+          Remember, true leadership isn't just about action and decision-making.
+          It's about listening—listening to your inner voice, to the subtle
+          shifts in your energy, and to the quiet whispers of your intuition.
+          <br />
+          <br />
+          Harness the transformative power of this time, Aries. Don't resist the
+          restlessness. Instead, let it guide you towards the changes that you
+          need to make. Embrace this opportunity for transformation, for as the
+          summer unfolds, so too does the next chapter of your life.
+          <br />
+          <br />
+          Stay vibrant and resilient, Aries. Welcome the heat of the day, but
+          also be ready to welcome the refreshing rain of change when it comes."
         </p>
       </div>
       <div className={styles.comments}>
-      <Comments />
+        <Comments />
       </div>
     </main>
   );
