@@ -1,5 +1,9 @@
+'use client'
+
 import Link from "next/link";
 import styles from "../page.module.css";
+import { useSession, signIn, signOut } from 'next-auth/react';
+
 
 const Header = () => {
   return (
