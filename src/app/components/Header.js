@@ -1,9 +1,8 @@
-'use client'
 
 import Link from "next/link";
 import styles from "../page.module.css";
-import { useSession, signIn, signOut } from 'next-auth/react';
-
+import { useSession } from "next-auth/react";
+import GoogButn from "./GoogButn";
 
 const Header = () => {
   return (
@@ -14,9 +13,7 @@ const Header = () => {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <button onClick={() => signIn("google")}>
-              Sign in with Google
-            </button>
+            <GoogButn />
           </li>
           {/* <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
