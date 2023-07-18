@@ -17,8 +17,10 @@
   z-index: 2;
   /* font-family: var(--font-mono); */
   font-family: 'Darker Grotesque', sans-serif;
+  font-weight: 700;
   background: var(--primary-background);
   color:white;
+  padding-bottom: 80px;
 }
 
 .description a {
