@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;700&display=swap');
 
 
 :root {
@@ -17,12 +17,19 @@
  yellow, 2%, orange, pink 40%, blue 160%
   ); */
 
-  --primary-background: radial-gradient(ellipse 160% 50% at 50% 97%,
+  --primary-background: radial-gradient(at 0% 100%,
   yellow 1%,
   orange 30%,
   pink 50%,
   darkblue 100%
   );
+
+  /* --primary-background: radial-gradient(ellipse 160% 50% at 50% 97%,
+  yellow 1%,
+  orange 30%,
+  pink 50%,
+  darkblue 100%
+  ); */
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,

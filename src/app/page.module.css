@@ -17,7 +17,7 @@
   z-index: 2;
   /* font-family: var(--font-mono); */
   font-family: 'Darker Grotesque', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   background: var(--primary-background);
   color:white;
   padding-bottom: 80px;
@@ -133,6 +133,14 @@
 .logo {
   position: relative;
 }
+
+.navList {
+  display: flex;
+  list-style: none; /* Removes the bullet points from the list */
+  padding: 0;
+}
+
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {

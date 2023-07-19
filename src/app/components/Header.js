@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className={styles.headerComponent}>
       <nav>
-        <ul>
+        <ul className={styles.navList}>
           <li>
             <Link href="/">Home</Link>
           </li>
