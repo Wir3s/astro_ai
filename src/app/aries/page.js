@@ -51,7 +51,7 @@ export default function Aries() {
           also be ready to welcome the refreshing rain of change when it comes."
         </p>
       </div>
-      <div className={styles.comments}>
+      <div style={{width: '100%'}}>
         <Comments />
       </div>
     </main>

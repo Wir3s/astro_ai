@@ -37,10 +37,20 @@
 .headerComponent {
   margin-bottom: 40px;
   color: white;
-  background-color: black;
+  background-color: var(--component-background-color);
   width: 100%;
   padding: 20px;
   text-align: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none; /* Removes the bullet points from the list */
+  padding: 0;
+}
+
+.navList li:not(:last-child) {
+  margin-right: 40px;
 }
 
 /* .description a:hover {
@@ -51,14 +61,8 @@
   position: relative;
   margin: 0;
   padding: 1rem;
-  /* background-color: rgba(var(--callout-rgb), 0.5); */
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
 }
 
-.comments {
-  padding: 2rem;
-}
 
 .code {
   font-weight: 700;
@@ -134,11 +138,7 @@
   position: relative;
 }
 
-.navList {
-  display: flex;
-  list-style: none; /* Removes the bullet points from the list */
-  padding: 0;
-}
+
 
 
 /* Enable hover only on non-touch devices */
@@ -188,6 +188,9 @@
     transform: none;
     height: 300px;
   }
+
+ 
+
 
   /* .description {
     font-size: 0.8rem;

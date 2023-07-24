@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
+import styles from "../components/comments.module.css"
 
 function Comments() {
   const [comments, setComments] = useState([]);
@@ -17,20 +18,21 @@ function Comments() {
   };
 
   return (
-    <div>
+    <div className={styles.commentsContainer}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           placeholder="Enter a comment"
+          className={styles.commentsInput}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.commentsButton}>Submit</button>
       </form>
 
-      <ul>
+      <ul className={styles.commentsList}>
         {comments.map((comment, index) => (
-          <li key={index}>{comment}</li>
+          <li key={index} className={styles.commentsItem}>{comment}</li>
         ))}
       </ul>
     </div>
