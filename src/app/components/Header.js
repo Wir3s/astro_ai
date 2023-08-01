@@ -1,10 +1,16 @@
-
 import Link from "next/link";
 import styles from "../page.module.css";
-import { useSession } from "next-auth/react";
 import GoogButn from "./GoogButn";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route.js";
+import {
+  LoginButton,
+  LogoutButton,
+} from "../components/AuthButns/AuthButns.js";
 
-const Header = () => {
+export default async function Header() {
+  const session = await getServerSession(authOptions);
+
   return (
     <header className={styles.headerComponent}>
       <nav>
@@ -12,13 +18,11 @@ const Header = () => {
           <li>
             <Link href="/">Home</Link>
           </li>
-          <li>
-            <GoogButn />
-          </li>
+          <li>{session && <LogoutButton />} {!session && <LoginButton />}</li>
         </ul>
       </nav>
     </header>
   );
 };
 
-export default Header;
+

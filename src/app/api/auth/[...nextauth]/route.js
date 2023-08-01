@@ -10,8 +10,20 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  session: {
+    strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+  },
+  // callbacks: {
+  //   async session({ session, token, user }) {
+  //     // Send properties to the client, like an access_token and user id from a provider.
+  //     session.accessToken = token.accessToken;
+  //     session.user.id = token.id;
+
+  //     return session;
+  //   },
+  // },
   secret: process.env.NEXTAUTH_SECRET,
-  // define other NextAuth options here
 });
 
 export { handler as GET, handler as POST };
