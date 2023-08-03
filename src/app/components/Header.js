@@ -10,7 +10,7 @@ import {
 
 export default async function Header() {
   const session = await getServerSession(authOptions);
-
+  console.log(session);
   return (
     <header className={styles.headerComponent}>
       <nav>
@@ -18,11 +18,12 @@ export default async function Header() {
           <li>
             <Link href="/">Home</Link>
           </li>
-          <li>{session && <LogoutButton />} {!session && <LoginButton />}</li>
+          <li>
+            {session && <LogoutButton />} {!session && <LoginButton />}
+          </li>
+          
         </ul>
       </nav>
     </header>
   );
-};
-
-
+}
