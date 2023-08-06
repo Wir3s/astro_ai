@@ -21,17 +21,19 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <h1>An Insightful Collaboration Between Human and AI</h1>
+        <h1 className={styles.headline}>
+          An Insightful Collaboration Between Human and AI
+        </h1>
         <div className="flex flex-wrap justify-center">
           {signs.map((sign, index) => (
             <div
               key={index}
               className="flex flex-col items-center m-4 md:w-1/4 lg:w-1/6"
             >
-              <Link 
+              <Link
                 href={`/${sign.toLowerCase()}`}
                 className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:duration-300"
-                >
+              >
                 <Image
                   src={`/images/${sign.toLowerCase()}_icon.svg`}
                   alt={`${sign} icon`}

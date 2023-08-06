@@ -63,6 +63,16 @@
   padding: 1rem;
 }
 
+.headline {
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: white;
+  font-size: 1.6rem;
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners */
+  display: inline-block; /* So the background only extends as much as it needs to */
+  margin-left: 20px;
+}
+
 
 .code {
   font-weight: 700;
