@@ -1,8 +1,8 @@
 import Image from "next/image";
-import styles from "../page.module.css";
-import DateToday from "../components/DateToday";
-import Comments from "../components/Comments";
-import Header from "../components/Header";
+import styles from "../../page.module.css";
+import DateToday from "../../components/DateToday";
+import Comments from "../../components/Comments";
+import Header from "../../components/Header";
 
 export default function Aries() {
   return (

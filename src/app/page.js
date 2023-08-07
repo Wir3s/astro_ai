@@ -31,7 +31,7 @@ export default function Home() {
               className="flex flex-col items-center m-4 md:w-1/4 lg:w-1/6"
             >
               <Link
-                href={`/${sign.toLowerCase()}`}
+                href={`/signs/${sign.toLowerCase()}`}
                 className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:duration-300"
               >
                 <Image
