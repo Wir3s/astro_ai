@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Register() {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", email: "", password: "" });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,6 +26,7 @@ export default function Register() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <input type ="text" name="username" placeholder="Username" onChange={handleChange} required />
       <input type="email" name="email" onChange={handleChange} required />
       <input type="password" name="password" onChange={handleChange} required />
       <button type="submit">Register</button>

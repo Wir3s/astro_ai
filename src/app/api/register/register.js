@@ -1,17 +1,17 @@
-import prisma from '../../../../lib/prisma';
+import prisma from "../../../../lib/prisma";
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
+  if (req.method !== "POST") {
     return res.status(405).end();
   }
 
-  const { email, password } = req.body;
+  const { username, email, password } = req.body;
 
   // Here you should add validation and hashing for the password.
 
   try {
     const newUser = await prisma.user.create({
-      data: { email, password },
+      data: { username, email, password },
     });
 
     return res.status(201).json(newUser);
