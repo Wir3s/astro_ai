@@ -4,16 +4,20 @@ import DateToday from "../../components/DateToday";
 import Comments from "../../components/Comments";
 import Header from "../../components/Header";
 
-export default function Capricorn() {
+export default function Pisces() {
   return (
     <main className={styles.main}>
-            <Header />
+      <Header />
       <DateToday />
       <div className={styles.description}>
         <p>
-        Capricorn, your disciplined nature resonates with the back-to-school energy. Focus on building solid foundations, both in your personal life and your community. Economic prospects are bright, but don't lose sight of the importance of sustainability and mindfulness. Your leadership can inspire others to reach for higher ideals and a brighter future.
+          Balance and community are key themes for you, Libra, as the world
+          moves towards a new phase of hope and connection. Engage with your
+          local surroundings, savoring the food, music, and cultural richness
+          they offer. Embrace sustainability and well-being, and let your
+          diplomatic skills foster unity and understanding. Love and laughter
+          await you.
         </p>
-       
       </div>
       <div style={{ width: "100%" }}>
         <Comments />

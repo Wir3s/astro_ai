@@ -4,16 +4,19 @@ import DateToday from "../../components/DateToday";
 import Comments from "../../components/Comments";
 import Header from "../../components/Header";
 
-export default function Capricorn() {
+export default function Pisces() {
   return (
     <main className={styles.main}>
-            <Header />
+      <Header />
       <DateToday />
       <div className={styles.description}>
         <p>
-        Capricorn, your disciplined nature resonates with the back-to-school energy. Focus on building solid foundations, both in your personal life and your community. Economic prospects are bright, but don't lose sight of the importance of sustainability and mindfulness. Your leadership can inspire others to reach for higher ideals and a brighter future.
+          Pisces, your empathetic and spiritual nature finds a home in this
+          season of mindfulness and well-being. Immerse yourself in the arts, be
+          it film or music, and let your creativity flow. Trust your intuition,
+          and don't be afraid to dream big. Connect with your community, and let
+          your compassionate heart guide you towards healing and transformation.
         </p>
-       
       </div>
       <div style={{ width: "100%" }}>
         <Comments />
