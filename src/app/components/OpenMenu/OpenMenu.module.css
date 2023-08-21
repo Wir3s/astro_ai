@@ -1,0 +1,34 @@
+.header {
+  position: relative; /* Relative positioning for the header */
+}
+
+.menuButton {
+  /* font-size: 24px; */
+  cursor: pointer;
+}
+
+.menuContainer {
+  position: absolute; /* Absolute positioning for the menu container */
+  top: 100%; /* Positioned just below the header */
+  left: 0; /* Aligned to the left */
+  width: 200px; /* Fixed width for the column */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #f4f4f4; /* Background color for the column */
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.closed {
+  height: 0;
+}
+
+.open {
+  height: auto; /* Expand to fit content */
+}
+
+  

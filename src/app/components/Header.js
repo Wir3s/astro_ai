@@ -7,12 +7,15 @@ import {
   LoginButton,
   LogoutButton,
 } from "../components/AuthButns/AuthButns.js";
+import Burgs from "../components/OpenMenu/OpenMenu"
 
 export default async function Header() {
   const session = await getServerSession();
   console.log(session);
   return (
+    
     <header className={styles.headerComponent}>
+      
       <nav>
         <ul className={styles.navList}>
           <li>
@@ -21,7 +24,7 @@ export default async function Header() {
           <li>
             {session && <LogoutButton />} {!session && <LoginButton />}
           </li>
-          
+          <Burgs />
         </ul>
       </nav>
     </header>
