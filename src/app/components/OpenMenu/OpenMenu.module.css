@@ -13,8 +13,13 @@
   left: 0; /* Aligned to the left */
   width: 200px; /* Fixed width for the column */
   overflow: hidden;
-  transition: all 0.3s ease;
-  background: #f4f4f4; /* Background color for the column */
+  opacity: 0; /* Set initial opacity to 0 */
+  transition: opacity 0.3s ease;
+  background: rgba(128, 128, 128, 0.9); /* Background color for the column */
+  color: rgb(33, 3, 108);
+  z-index: 1000; /* Set the z-index high enough to be above other elements */
+  padding: 0 10px 10px 10px;
+
 }
 
 .menuItems {
@@ -25,10 +30,33 @@
 
 .closed {
   height: 0;
+  padding: 0;
 }
 
 .open {
   height: auto; /* Expand to fit content */
+  padding: 18px;
+  opacity: 1;
+}
+
+.menuItems a:hover {
+  color: darkred; /* Change the link color on hover */
+}
+
+.closeButton {
+  position: absolute; /* Position the button in the top right corner */
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background: none; /* Remove default background */
+  border: none; /* Remove default border */
+  font-size: 24px; /* Set the size of the 'X' */
+  padding: 5px; /* Add some padding around the 'X' */
+  color: #333; /* Set the color of the 'X' */
+}
+
+.closeButton:hover {
+  color: red; /* Change the color on hover */
 }
 
   

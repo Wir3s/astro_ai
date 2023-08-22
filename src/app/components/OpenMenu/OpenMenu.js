@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from "next/link";
 import styles from "./OpenMenu.module.css";
 
 const OpenMenu = () => {
@@ -20,13 +21,14 @@ const signs = [
 
 return (
   <div className={styles.header}>
-    <button className={styles.menuButton} onClick={toggleMenu}>Menu</button>
+    <button className={styles.menuButton} onClick={toggleMenu}>Signs</button>
     <div className={styles.menuContainer + (isOpen ? ` ${styles.open}` : ` ${styles.closed}`)}>
       <div className={styles.menuItems}>
         {signs.map(sign => (
-          <a href={`/signs/${sign.toLowerCase()}`} key={sign}>{sign}</a>
+          <Link href={`/signs/${sign.toLowerCase()}`} key={sign}>{sign}</Link>
         ))}
       </div>
+      <button className={styles.closeButton} onClick={toggleMenu}>X</button>
     </div>
   </div>
 );
