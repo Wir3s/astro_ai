@@ -4,7 +4,7 @@ import DateToday from "../../components/DateToday";
 import Comments from "../../components/Comments";
 import Header from "../../components/Header";
 
-export default function Aries() {
+export default function Aquarius() {
   return (
     <main className={styles.signsmain}>
       <Header />
