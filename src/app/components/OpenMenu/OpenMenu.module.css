@@ -40,7 +40,8 @@
 }
 
 .menuItems a:hover {
-  color: darkred; /* Change the link color on hover */
+  color: rgb(234, 95, 95); /* Change the link color on hover */
+  background-color: rgb(88, 83, 83);
 }
 
 .closeButton {

@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0.6;
+    width: 100vmax;
   }
 
 .commentsButton {

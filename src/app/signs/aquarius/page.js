@@ -6,10 +6,12 @@ import Header from "../../components/Header";
 
 export default function Aries() {
   return (
-    <main className={styles.main}>
+    <main className={styles.signsmain}>
       <Header />
-      <DateToday />
-      <div className={styles.description}>
+      
+      <div className={styles.signdesc}>
+        <h1>Aquarius</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Aquarius, your innovative and forward-thinking nature is in harmony
           with the world's focus on technology and alternative energy. Dive into
