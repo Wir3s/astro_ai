@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Aries() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Aries</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Aries, the energy of late summer is calling you to action. Embrace the
           community around you, find joy in local gatherings, and savor the

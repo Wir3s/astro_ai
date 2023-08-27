@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Pisces() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Libra</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Balance and community are key themes for you, Libra, as the world
           moves towards a new phase of hope and connection. Engage with your

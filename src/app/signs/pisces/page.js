@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Pisces() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Pisces</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Pisces, your empathetic and spiritual nature finds a home in this
           season of mindfulness and well-being. Immerse yourself in the arts, be

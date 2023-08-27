@@ -1,6 +1,11 @@
 .commentsContainer {
     padding: 2rem;
-    background-color: var(--component-background-color);
+    /* background-color: var(--component-background-color); */
+    background: radial-gradient(circle, 
+    rgba(var(--component-background-red), 
+         var(--component-background-green), 
+         var(--component-background-blue), 0.6), 
+    transparent);
     margin-top:20px;
     display: flex;
     flex-direction: column;

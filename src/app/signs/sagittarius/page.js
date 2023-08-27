@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Pisces() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Sagittarius</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Adventure and exploration call to you, Sagittarius. Engage with the
           world around you, be it through travel or cultural experiences.

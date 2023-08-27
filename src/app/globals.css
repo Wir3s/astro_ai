@@ -44,6 +44,10 @@
     rgba(255, 255, 255, 0)
   );
 
+  --component-background-red: 255;   /* Red component */
+  --component-background-green: 255; /* Green component */
+  --component-background-blue: 255;  /* Blue component */
+
   --component-background-color: darkblue;
 
   --tile-start-rgb: 239, 245, 249;

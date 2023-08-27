@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Pisces() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Virgo</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Virgo, as the harvest season approaches, your practical and analytical
           skills are in high demand. Embrace technology and innovation without

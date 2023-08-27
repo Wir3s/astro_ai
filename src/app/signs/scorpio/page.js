@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Pisces() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Scorpio</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Scorpio, the undercurrents of change are aligning with your intuitive
           nature. Explore the inner workings of your mind through meditation or

@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Pisces() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Leo</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Leo, the spotlight is on you this season, and your vibrant energy
           resonates with the lively buzz of local festivals and celebrations.

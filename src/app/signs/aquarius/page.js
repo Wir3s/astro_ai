@@ -7,8 +7,7 @@ import Header from "../../components/Header";
 export default function Aquarius() {
   return (
     <main className={styles.signsmain}>
-      <Header />
-      
+      <Header />      
       <div className={styles.signdesc}>
         <h1>Aquarius</h1>
       <div className={styles.center}><DateToday /></div>

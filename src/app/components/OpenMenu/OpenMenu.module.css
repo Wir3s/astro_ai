@@ -15,8 +15,8 @@
   overflow: hidden;
   opacity: 0; /* Set initial opacity to 0 */
   transition: opacity 0.3s ease;
-  background: rgba(128, 128, 128, 0.9); /* Background color for the column */
-  color: rgb(33, 3, 108);
+  background: rgba(56, 10, 196, 0.9); /* Background color for the column */
+  color: rgb(255, 255, 255);
   z-index: 1000; /* Set the z-index high enough to be above other elements */
   padding: 0 10px 10px 10px;
 
@@ -40,8 +40,9 @@
 }
 
 .menuItems a:hover {
-  color: rgb(234, 95, 95); /* Change the link color on hover */
+  color: rgb(255, 231, 231); /* Change the link color on hover */
   background-color: rgb(88, 83, 83);
+  transition: all .2s ease-in-out;
 }
 
 .closeButton {

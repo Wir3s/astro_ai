@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 
 export default function Pisces() {
   return (
-    <main className={styles.main}>
-      <Header />
-      <DateToday />
-      <div className={styles.description}>
+    <main className={styles.signsmain}>
+      <Header />      
+      <div className={styles.signdesc}>
+        <h1>Taurus</h1>
+      <div className={styles.center}><DateToday /></div>
         <p>
           Taurus, the bounty of the earth is at your fingertips, with gardens
           delivering their delicious harvest. Now is the time to ground yourself

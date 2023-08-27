@@ -76,12 +76,19 @@
 .headerComponent {
   margin-bottom: 10px;
   color: white;
-  background-color: rgba(0,0,139, 0.4);
+  /* background-color: rgba(0,0,139, 0.4); */
+  background: radial-gradient(circle, 
+  rgba(var(--component-background-red), 
+       var(--component-background-green), 
+       var(--component-background-blue), 0.6), 
+  transparent);
   width: 100%;
   padding: 20px;
   text-align: center;
   /* opacity: 0.8; */
 }
+
+
 
 .navList {
   display: flex;
