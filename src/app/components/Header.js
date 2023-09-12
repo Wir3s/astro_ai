@@ -1,8 +1,6 @@
 import Link from "next/link";
 import styles from "../page.module.css";
-import GoogButn from "./GoogButn";
 import { getServerSession } from "next-auth";
-// import { authOptions } from "../api/auth/[...nextauth]/route.js";
 import {
   LoginButton,
   LogoutButton,

@@ -28,7 +28,7 @@ return (
           <Link href={`/signs/${sign.toLowerCase()}`} key={sign}>{sign}</Link>
         ))}
       </div>
-      <button className={styles.closeButton} onClick={toggleMenu}>X</button>
+      <button className={styles.closeButton} onClick={toggleMenu} style={{color: "white", fontSize: ".9rem"}}>X</button>
     </div>
   </div>
 );

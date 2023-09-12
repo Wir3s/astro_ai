@@ -25,6 +25,7 @@ const handler = NextAuth({
 
       return session;
     },
+
     // async createUser(user) {
     //   console.log(user);
 
@@ -50,6 +51,7 @@ const handler = NextAuth({
     //     return NextResponse.json(user);
     //   }
     // },
+    
   },
   secret: process.env.NEXTAUTH_SECRET,
 });
