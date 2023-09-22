@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from "next/link";
 import styles from "./OpenMenu.module.css";
+import { useClickAway } from "@uidotdev/usehooks";
 
 const OpenMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,9 @@ const OpenMenu = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const ref = useClickAway(() => {
+    setIsOpen(false);
+  });
 
 
 
@@ -28,7 +32,9 @@ return (
           <Link href={`/signs/${sign.toLowerCase()}`} key={sign}>{sign}</Link>
         ))}
       </div>
+      <dialog ref={ref}>
       <button className={styles.closeButton} onClick={toggleMenu} style={{color: "white", fontSize: ".9rem"}}>X</button>
+      </dialog>    
     </div>
   </div>
 );
