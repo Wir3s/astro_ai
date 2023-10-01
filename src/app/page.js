@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <h1 className={styles.headline}>
+        <h1 className={`${styles.headline} hover:animate-custom-pulse`}>
           An Insightful Collaboration Between Human and AI
         </h1>
         <div className="flex flex-wrap justify-center">
