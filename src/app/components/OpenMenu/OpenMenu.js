@@ -31,6 +31,7 @@ const OpenMenu = () => {
   ];
 
   return (
+    
     <div className={styles.header}>
       <button className={styles.menuButton} onClick={toggleMenu}>
         Signs
@@ -41,13 +42,17 @@ const OpenMenu = () => {
           (isOpen ? ` ${styles.open}` : ` ${styles.closed}`)
         }
       >
-        <div className={styles.menuItems}>
+        
+        <div className={styles.menuItems} ref={ref}>
+        
           {signs.map((sign) => (
             <Link href={`/signs/${sign.toLowerCase()}`} key={sign}>
               {sign}
             </Link>
+            
           ))}
         </div>
+        <div>
         <button
           className={styles.closeButton}
           onClick={toggleMenu}
@@ -55,7 +60,7 @@ const OpenMenu = () => {
         >
           Close
         </button>
-        <dialog ref={ref}></dialog>
+        </div>
       </div>
     </div>
   );
