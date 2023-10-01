@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import Header from "../app/components/Header";
 
 const signs = [
   "Capricorn",
@@ -20,6 +21,7 @@ const signs = [
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Header />
       <div className={styles.description}>
         <h1 className={`${styles.headline} hover:animate-custom-pulse`}>
           An Insightful Collaboration Between Human and AI

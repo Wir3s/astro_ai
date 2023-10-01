@@ -122,7 +122,7 @@
   font-family: var(--font-mono);
 }
 
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
   width: var(--max-width);
@@ -153,9 +153,9 @@
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 30ch;
-}
+} */
 
-.center {
+/* .center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,7 +185,7 @@
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
-}
+} */
 
 .logo {
   position: relative;
