@@ -96,6 +96,26 @@
   /* opacity: 0.8; */
 }
 
+.star {
+  animation-name: twinkle;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+      }
+   50% {
+    opacity: 0.5;
+              }
+    100% {
+      opacity: 1;
+    }
+  
+}
+
 
 
 .navList {
