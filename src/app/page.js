@@ -26,8 +26,11 @@ export default function Home() {
         <h1 className={`${styles.headline} hover:animate-custom-pulse`}>
           An Insightful Collaboration Between Human and AI
         </h1>
-        <div className={styles.star}>
-          <Image src={`/images/star_background.png`} width={50} height={50} />
+        {/* <div className={styles.star}>
+          <Image src={`/images/lens_flare.png`} width={50} height={50} />
+        </div> */}
+        <div>
+          
         </div>
         <div className="flex flex-wrap justify-center">
           {signs.map((sign, index) => (
