@@ -1,8 +1,10 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import styles from '../../page.module.css';
-import starImage from '../../../../public/images/lens_flare.png';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "../../page.module.css";
+import starImage from "../../../../public/images/lens_flare.png";
+// import starImage from './lens_flare.png';
 
 export default function StarBackground() {
   const [stars, setStars] = useState([]);
@@ -20,20 +22,36 @@ export default function StarBackground() {
   }, []);
 
   return (
-    <div  style={{ backgroundImage: `url(${starImage})` }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "transparent",
+      }}
+    >
       {stars.map((star, index) => (
         <div
           key={index}
           className={styles.star}
           style={{
+            position: "absolute",
             width: `${star.size}px`,
             height: `${star.size}px`,
-            borderRadius: '50%',
-            backgroundColor: 'white',
+            // borderRadius: "50%",
+            // backgroundImage: `url(${starImage})`,
+            // backgroundSize: "cover",
             left: `${star.x}px`,
             top: `${star.y}px`,
           }}
-        />
+        >
+        <Image
+        src={starImage}  // Using the imported image
+        alt="Star"  // Alt text for accessibility
+        width={star.size}  // Dynamic sizing
+        height={star.size}
+      />
+    </div>
       ))}
     </div>
   );

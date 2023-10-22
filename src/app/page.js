@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Header from "../app/components/Header";
+import StarBackground from "../app/components/StarBackground/StarBackground";
 
 const signs = [
   "Capricorn",
@@ -23,15 +24,13 @@ export default function Home() {
     <main className={styles.main}>
       <Header />
       <div className={styles.description}>
+        <StarBackground />
         <h1 className={`${styles.headline} hover:animate-custom-pulse`}>
           An Insightful Collaboration Between Human and AI
         </h1>
-        {/* <div className={styles.star}>
-          <Image src={`/images/lens_flare.png`} width={50} height={50} />
-        </div> */}
-        <div>
-          
+        <div className={styles.star}>
         </div>
+
         <div className="flex flex-wrap justify-center">
           {signs.map((sign, index) => (
             <div

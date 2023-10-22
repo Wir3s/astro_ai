@@ -98,7 +98,7 @@
 
 .star {
   animation-name: twinkle;
-  animation-duration: 6s;
+  animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -108,7 +108,7 @@
     opacity: 1;
       }
    50% {
-    opacity: 0.5;
+    opacity: 0.1;
               }
     100% {
       opacity: 1;
