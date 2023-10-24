@@ -18,7 +18,7 @@ export default function StarBackground() {
       const size = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
       const x = Math.floor(Math.random() * window.innerWidth);
       const y = Math.floor(Math.random() * window.innerHeight);
-      const duration = Math.random() * (15 - 5) + 1; // Animation duration between 5 and 15 seconds
+      const duration = Math.random() * (15 - 5) + 5; // Animation duration between 5 and 15 seconds
       const image = Math.random() > 0.5 ? starImage1 : starImage2; // Randomly select an image
       newStars.push({ size, x, y, duration, image });
     }

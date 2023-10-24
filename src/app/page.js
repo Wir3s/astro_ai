@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "../app/components/Header";
 import StarBackground from "../app/components/StarBackground/StarBackground";
 
+
 const signs = [
   "Capricorn",
   "Aries",
@@ -18,6 +19,8 @@ const signs = [
   "Scorpio",
   "Virgo",
 ];
+
+
 
 export default function Home() {
   return (
@@ -39,7 +42,7 @@ export default function Home() {
             >
               <Link
                 href={`/signs/${sign.toLowerCase()}`}
-                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:duration-300"
+                className={`${styles['glow-on-hover']} transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:duration-300`}
               >
                 <Image
                   src={`/images/${sign.toLowerCase()}_icon.svg`}

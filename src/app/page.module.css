@@ -19,13 +19,14 @@
 }
 
 .description {
-
+  overflow: hidden;
   font-size: 1.4rem;
   width: 100%;
   z-index: 2;
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 500;
   background: var(--primary-background);
+  background-size: 200% 200%;
   color:white;
   padding-bottom: 80px;
 }
@@ -81,6 +82,16 @@
   font-size: 6rem;
 }
 
+.glow-on-hover:hover {
+  text-shadow: 0 0 5px #fff, 
+               0 0 10px #fff, 
+               0 0 15px #ffcc00,  /* Yellowish */
+               0 0 20px #ffcc00,  /* Yellowish */
+               0 0 25px #0099ff,  /* Bluish */
+               0 0 30px #0099ff,  /* Bluish */
+               0 0 35px #0099ff;  /* Bluish */
+}
+
 .headerComponent {
   margin-bottom: 10px;
   color: white;
@@ -97,10 +108,10 @@
 }
 
 .star {
-  animation-name: twinkle;
-  /* animation-duration: 5s; */
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  opacity: 0; /* Set initial opacity */
+  animation-name: fadeInTwinkle, twinkle;
+  animation-timing-function: ease-in-out, linear;
+  animation-iteration-count: 1, infinite; /* fadeInTwinkle runs once, twinkle runs infinitely */
 }
 
 @keyframes twinkle {
@@ -116,7 +127,25 @@
   
 }
 
+@keyframes fadeInTwinkle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+@keyframes GradientShift {
+  0% {
+    background: var(--primary-background-start);
+    background-position: 0% 50%;
+  }
+  100% {
+    background: var(--primary-background-end);
+    background-position: 100% 50%;
+  }
+}
 
 .navList {
   display: flex;
