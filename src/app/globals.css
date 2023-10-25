@@ -12,17 +12,19 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
+
+
   /* --primary-background: radial-gradient(
   ellipse 160% 50% at 50% 97%,  
  yellow, 2%, orange, pink 40%, blue 160%
   ); */
 
-  --primary-background: radial-gradient(at 0% 100%,
+  /* --primary-background: radial-gradient(at 0% 100%,
   yellow 1%,
   orange 30%,
   pink 50%,
   darkblue 100%
-  );
+  ); */
 
 
   /* --primary-background: radial-gradient(ellipse 160% 50% at 50% 97%,
