@@ -3,10 +3,10 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import prisma from "../../../../../lib/prisma";
-import { PrismaAdapter } from "@prisma/client";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 const handler = NextAuth({
-  // adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -18,13 +18,51 @@ const handler = NextAuth({
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   callbacks: {
-    async session({ session, token, user }) {
-      // Send properties to the client, like an access_token and user id from a provider.
-      session.accessToken = token.accessToken;
-      session.user.id = token.id;
+    callbacks: {
+      async signIn({ user, account, profile }) {
+        if (account.provider === "google") {
+          // Check if the user exists in the database
+          const existingUser = await prisma.user.findUnique({
+            where: { email: user.email },
+          });
 
-      return session;
+          if (!existingUser) {
+            // If user doesn't exist, create a new one
+            await prisma.user.create({
+              data: {
+                email: user.email,
+                name: user.name,
+                image: user.image,
+              },
+            });
+          } else {
+            // Optional: Update user details if they already exist
+            await prisma.user.update({
+              where: { email: user.email },
+              data: {
+                name: user.name,
+                image: user.image,
+              },
+            });
+          }
+        }
+        return true; // Return true to proceed with the sign in
+      },
+
+      async session({ session, token, user }) {
+        // Send properties to the client, like an access_token and user id from a provider.
+        session.accessToken = token.accessToken;
+        session.user.id = token.id;
+        return session;
+      },
     },
+    // async session({ session, token, user }) {
+    //   // Send properties to the client, like an access_token and user id from a provider.
+    //   session.accessToken = token.accessToken;
+    //   session.user.id = token.id;
+
+    //   return session;
+    // },
 
     // async createUser(user) {
     //   console.log(user);
@@ -51,7 +89,6 @@ const handler = NextAuth({
     //     return NextResponse.json(user);
     //   }
     // },
-    
   },
   secret: process.env.NEXTAUTH_SECRET,
 });
