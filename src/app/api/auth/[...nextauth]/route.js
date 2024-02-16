@@ -56,39 +56,6 @@ const handler = NextAuth({
         return session;
       },
     },
-    // async session({ session, token, user }) {
-    //   // Send properties to the client, like an access_token and user id from a provider.
-    //   session.accessToken = token.accessToken;
-    //   session.user.id = token.id;
-
-    //   return session;
-    // },
-
-    // async createUser(user) {
-    //   console.log(user);
-
-    //   return user;
-
-    // },
-    // async signIn({ req, res }) {
-    //   const { name, email } = await req.json();
-    //   const exists = await prisma.user.findUnique({
-    //     where: {
-    //       email,
-    //     },
-    //   });
-    //   if (exists) {
-    //     return NextResponse.json({ error: "User already exists" });
-    //   } else {
-    //     const user = await prisma.user.create({
-    //       data: {
-    //         name,
-    //         email,
-    //       },
-    //     });
-    //     return NextResponse.json(user);
-    //   }
-    // },
   },
   secret: process.env.NEXTAUTH_SECRET,
 });
