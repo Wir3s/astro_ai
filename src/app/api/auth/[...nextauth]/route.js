@@ -14,23 +14,26 @@ const handler = NextAuth({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
-    // CredentialsProvider({
-    //   name: "Email and Password",
-    //   credentials: {
-    //     email: { label: "Email", type: "email" },
-    //     password: { label: "Password", type: "password" },
-    //   },
-    //   async authorize(credentials) {
-    //     const user = await prisma.user.findUnique({
-    //       where: { email: credentials.email },
-    //     });
-    //     if (!user || !(await bcrypt.compare(credentials.password))) {
-    //       throw new Error("Email or password is incorrect.");
-    //     }
-    //     // Return user object for successful sign-in
-    //     return { id: user.id, name: user.name, email: user.email };
-    //   },
-    // }),
+    CredentialsProvider({
+      name: "Email and Password",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email },
+        });
+        if (
+          !user ||
+          !(await bcrypt.compare(credentials.password, user.password))
+        ) {
+          throw new Error("Email or password is incorrect.");
+        }
+        // Return user object for successful sign-in
+        return { id: user.id, name: user.name, email: user.email };
+      },
+    }),
   ],
   session: {
     strategy: "jwt",
