@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Register() {
   const [formData, setFormData] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
   });
+
+  const router = useRouter();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +29,7 @@ export default function Register() {
 
     if (response.ok) {
       // Handle successful registration, such as redirecting to login page
-      redirect("/");
+      router.push("/");
     } else {
       const errorData = JSON.parse(text);
       console.error("Registration error:", errorData);
@@ -39,8 +41,8 @@ export default function Register() {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="username"
-        placeholder="Username"
+        name="name"
+        placeholder="name"
         onChange={handleChange}
         required
       />
@@ -51,13 +53,13 @@ export default function Register() {
         onChange={handleChange}
         required
       />
-      {/* <input
+      <input
         type="password"
         name="password"
         placeholder="password"
         onChange={handleChange}
         required
-      /> */}
+      />
       <button type="submit">Register</button>
     </form>
   );
