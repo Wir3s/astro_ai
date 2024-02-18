@@ -5,23 +5,24 @@ import {
   LoginButton,
   LogoutButton,
 } from "../components/AuthButns/AuthButns.js";
-import Burgs from "../components/OpenMenu/OpenMenu"
+import Burgs from "../components/OpenMenu/OpenMenu";
 
 export default async function Header() {
   const session = await getServerSession();
   console.log(session);
   return (
-    
     <header className={styles.headerComponent}>
-      
       <nav>
         <ul className={styles.navList}>
           <li>
             <Link href="/">Home</Link>
           </li>
+          {!session && (
           <li>
-            {session && <LogoutButton />} {!session && <LoginButton />}
+            <Link href="/signup">Create Account</Link>
           </li>
+          )}
+          <li>{session ? <LogoutButton /> : <LoginButton />}</li>
           <Burgs />
         </ul>
       </nav>

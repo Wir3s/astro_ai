@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../page.module.css";
-
+import Link from "next/link";
+// import Image from "next/image";
 
 export default function Register() {
   // State for form
@@ -73,46 +74,60 @@ export default function Register() {
   };
 
   return (
-    <main className={styles.main}>
-      <form onSubmit={handleSubmit} className={styles.signupForm}>
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={handleChange}
-          required
-        />
-        <div>
-          {!passwordValidation.minLength && (
-            <p>Password must have at least 16 characters</p>
-          )}
-          {!passwordValidation.uppercase && <p>Include an UPPERCASE letter</p>}
-          {!passwordValidation.lowercase && <p>Also a lowercase letter</p>}
-          {!passwordValidation.number && <p>Add a numb3r</p>}
-          {!passwordValidation.specialChar && <p>And a $pecial character!</p>}
-        </div>
-        <button
-          type="submit"
-          className={styles.signupButton}
-          disabled={!Object.values(passwordValidation).every(Boolean)}
-        >
-          Create Account
-        </button>
-      </form>
-    </main>
+    <div>
+      <header className={styles.headerComponent}>
+        <nav>
+          <ul className={styles.navList}>
+            {/* <Image src={`/images/logo2.webp`} alt="Logo" width={50} height={50} /> */}
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main className={styles.main}>
+        <form onSubmit={handleSubmit} className={styles.signupForm}>
+          <input
+            type="text"
+            name="name"
+            placeholder="name"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={handleChange}
+            required
+          />
+          <div>
+            {!passwordValidation.minLength && (
+              <p>Password must have at least 16 characters</p>
+            )}
+            {!passwordValidation.uppercase && (
+              <p>Include an UPPERCASE letter</p>
+            )}
+            {!passwordValidation.lowercase && <p>Also a lowercase letter</p>}
+            {!passwordValidation.number && <p>Add a numb3r</p>}
+            {!passwordValidation.specialChar && <p>And a $pecial character!</p>}
+          </div>
+          <button
+            type="submit"
+            className={styles.signupButton}
+            disabled={!Object.values(passwordValidation).every(Boolean)}
+          >
+            Create Account
+          </button>
+        </form>
+      </main>
+    </div>
   );
 }
