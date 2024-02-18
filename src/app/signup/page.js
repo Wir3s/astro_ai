@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../page.module.css";
-// import Header from "../components/Header";
+
 
 export default function Register() {
   // State for form
