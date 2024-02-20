@@ -40,13 +40,24 @@ model Session {
 model User {
   id            String    @id @default(cuid())
   name          String?
-  email         String   @unique
+  email         String    @unique
   emailVerified DateTime?
   password      String
   image         String?
   createdAt     DateTime  @default(now()) // Automatically set current date time when creating new user
+  credits       Credit[] // This line establishes a one-to-many relationship from User to Credit
   accounts      Account[]
   sessions      Session[]
+}
+
+model Credit {
+  id         String    @id @default(cuid())
+  userId     String
+  createdAt  DateTime  @default(now()) // Timestamp for when the credit was added
+  used       Boolean   @default(false) // Indicates if the credit has been used
+  validUntil DateTime? // Optional: If credits expire, you can add an expiration date
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
