@@ -22,7 +22,7 @@
 }
 
 .description {
-  /* overflow: hidden; */
+  overflow: hidden;
   font-size: 1.4rem;
   width: 100%;
   z-index: 2;
@@ -87,6 +87,16 @@
   font-size: 6rem;
 }
 
+.signdesc h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* padding: 1rem 0; */
+  font-weight: 700;
+  font-size: 6rem;
+}
+
 .signupForm {
   display: flex;
   flex-direction: column;
@@ -118,6 +128,9 @@
   background-color: #411771; /* Darker blue on hover */
 }
 
+.textarea {
+  width: 80vw; /* Adjust the vw unit as needed */
+}
 
 .glow-on-hover:hover {
   text-shadow: 0 0 5px #fff, 

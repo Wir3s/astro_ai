@@ -33,9 +33,9 @@ export default function PromptForm() {
         onChange={(e) => setPrompt(e.target.value)}
         className={styles.textarea}
         placeholder="Enter your prompt"
-      />
-      <button type="submit" className={styles.button}>
-        Submit to OpenAI
+      /> <br />
+      <button type="submit" className={styles.signupButton}>
+        Request a Fortune
       </button>
     </form>
   );

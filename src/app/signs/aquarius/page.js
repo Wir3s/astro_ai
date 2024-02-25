@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../../page.module.css";
 import DateToday from "../../components/DateToday";
-import Comments from "../../components/Comments";
+import PromptForm from "../../components/PromptForm/PromptForm";
 import Header from "../../components/Header";
 
 export default function Aquarius() {
@@ -10,7 +10,8 @@ export default function Aquarius() {
       <Header />      
       <div className={styles.signdesc}>
         <h1>Aquarius</h1>
-      <div className={styles.center}><DateToday /></div>
+      <h2><DateToday /></h2>
+      <br />
         <p>
           Aquarius, your innovative and forward-thinking nature is in harmony
           with the world's focus on technology and alternative energy. Dive into
@@ -18,10 +19,12 @@ export default function Aquarius() {
           and connection are key, so reach out and build bridges. Your ability
           to envision a better future is a beacon of hope for those around you.
         </p>
+        <br />
+        <div style={{ textAlign: 'center' }}>
+        <PromptForm />
+        </div>
       </div>
-      <div style={{ width: "100%" }}>
-        <Comments />
-      </div>
+
     </main>
   );
 }
