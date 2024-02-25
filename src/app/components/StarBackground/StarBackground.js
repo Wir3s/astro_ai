@@ -6,7 +6,6 @@ import styles from "../../page.module.css";
 import starImage1 from "../../../../public/images/lens_flare.png";
 import starImage2 from "../../../../public/images/lens_flare_white2.png";
 
-// import starImage from './lens_flare.png';
 
 export default function StarBackground() {
   const [stars, setStars] = useState([]);
