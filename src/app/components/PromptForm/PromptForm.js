@@ -5,15 +5,19 @@ import styles from "../../page.module.css";
 import { useState } from "react";
 // import styles from "./PromptForm.module.css";
 
-export default function PromptForm() {
-  const [prompt, setPrompt] = useState("");
+export default function PromptForm({ sign }) {
+  const [name, setName] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/queryOpenAI", {
+    const payload = {
+      name, // Should this be name:name,?
+      sign,
+    };
+    const response = await fetch("/api/astroAi", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt }),
+      body: JSON.stringify({ payload }),
     });
 
     const data = await response.json();
@@ -29,13 +33,15 @@ export default function PromptForm() {
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <textarea
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
         className={styles.textarea}
-        placeholder="Enter your prompt"
-      /> <br />
+        placeholder="Enter your name"
+        maxLength="40"
+      />{" "}
+      <br />
       <button type="submit" className={styles.signupButton}>
-        Request a Fortune
+        Generate Your Horoscope
       </button>
     </form>
   );

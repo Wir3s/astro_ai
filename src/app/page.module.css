@@ -3,7 +3,7 @@
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: center;
-  /* padding: 2rem; */
+  padding: 2rem;
   min-height: 100vh;
   height: auto;
   background: var(--primary-background);
@@ -129,7 +129,7 @@
 }
 
 .textarea {
-  width: 80vw; /* Adjust the vw unit as needed */
+  width: 60vw; /* Adjust the vw unit as needed */
 }
 
 .glow-on-hover:hover {
@@ -317,4 +317,18 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+/* Larger Desktops */
+@media (min-width: 1121px) {
+  /* Adjustments for larger desktop layouts go here */
+  .main {
+    padding: 2rem;
+  }
+
+  .signsmain {
+    padding: 2rem;
+  }
+
+  /* Add more customizations for larger screens as needed */
 }
