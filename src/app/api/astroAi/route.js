@@ -1,11 +1,10 @@
 // pages/api/queryOpenAI.js
 import { getSession } from "next-auth/react";
-import { PrismaClient } from "@prisma/client";
+
 import { Configuration, OpenAIApi } from "openai";
 
-const prisma = PrismaClient();
-
 export default async function handler(req, res) {
+  const session = await getSession({ req });
   if (session) {
     try {
       // Find available credit for the user
