@@ -199,6 +199,33 @@
   }
 }
 
+.comet {
+  width: 16px; /* Adjust size as needed */
+  height: 8px; /* Adjust size as needed */
+  border-radius: 50%;
+  background-color: #99dafd; /* This could be the "head" of your comet */
+  /* Tail using box-shadow for simplicity; adjust for a more complex gradient if desired */
+  box-shadow: 0px 0px 15px 5px rgba(88, 202, 247, 0.75), 
+              20px 0px 20px 5px rgba(138,43,226,0.5), /* Purple fade start */
+              40px 0px 30px 10px rgba(42, 1, 81, 0.25); /* Purple fade end */
+  position: absolute;
+  transition: left 9s, top 9s, opacity 5s ease-out; /* Adjust timing as needed */
+}
+
+
+/* .comet {
+  width: 10px; 
+  height: 10px; 
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,212,255,1) 100%);
+  box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff;
+  animation: streak 2s linear forwards;
+    position: absolute;
+  transition: left 5s, top 5s, opacity 5s ease-out;
+}  */
+
+
+
 .glowEffect {
   animation: glow 1s ease-in-out infinite alternate;
 }

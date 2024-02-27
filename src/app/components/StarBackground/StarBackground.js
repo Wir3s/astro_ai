@@ -5,10 +5,11 @@ import Image from "next/image";
 import styles from "../../page.module.css";
 import starImage1 from "../../../../public/images/lens_flare.png";
 import starImage2 from "../../../../public/images/lens_flare_white2.png";
-
+import Comet from "../Comet/Comet";
 
 export default function StarBackground() {
   const [stars, setStars] = useState([]);
+  const [showComet, setShowComet] = useState(false);
 
   useEffect(() => {
     const numStars = Math.floor(Math.random() * (100 - 40 + 1)) + 40;
@@ -22,6 +23,12 @@ export default function StarBackground() {
       newStars.push({ size, x, y, duration, image });
     }
     setStars(newStars);
+  }, []);
+
+  useEffect(() => {
+    // Show the comet after a delay
+    const timer = setTimeout(() => setShowComet(true), 5000); // 5 seconds after page load
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -41,9 +48,6 @@ export default function StarBackground() {
             position: "absolute",
             width: `${star.size}px`,
             height: `${star.size}px`,
-            // borderRadius: "50%",
-            // backgroundImage: `url(${starImage})`,
-            // backgroundSize: "cover",
             left: `${star.x}px`,
             top: `${star.y}px`,
             animationDuration: `${star.duration}s`,
@@ -57,6 +61,7 @@ export default function StarBackground() {
           />
         </div>
       ))}
+      {showComet && <Comet />}
     </div>
   );
 }
