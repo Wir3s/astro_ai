@@ -1,4 +1,5 @@
 import "./globals.css";
+import AuthSessionProvider from "./components/SessionProvider";
 
 // import { Inter } from "next/font/google";
 // import { Darker_Grotesque } from "next/font/google";
@@ -14,7 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>      
+      <body>
+        <AuthSessionProvider>{children}</AuthSessionProvider>
+      </body>
     </html>
   );
 }
