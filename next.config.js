@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    BASE_URL: process.env.BASE_URL || "http://localhost:3000",
+  },
   async headers() {
     return [
       {
@@ -18,7 +21,7 @@ const nextConfig = {
           //   value:
           //     " script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
           // },
-          
+
           // Add more headers here as needed.
         ],
       },
