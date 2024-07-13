@@ -6,11 +6,9 @@ import Header from "../../components/Header";
 
 // Fetch Data
 async function getHoroscope(sign) {
-  const res = await fetch(`${process.env.BASE_URL}/data/horoscopes.json`);
-  console.log(
-    "Fetching horoscopes from:",
-    `${process.env.BASE_URL}/data/horoscopes.json`
-  );
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const res = await fetch(`${baseUrl}/data/horoscopes.json`);
+  console.log("Fetching horoscopes from:", `${baseUrl}/data/horoscopes.json`);
   if (!res.ok) {
     console.error("Failed to fetch data:", res.statusText);
     throw new Error("Failed to fetch data");
