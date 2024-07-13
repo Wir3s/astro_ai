@@ -49,7 +49,6 @@ export default async function SignPage({ params }) {
   );
 }
 
-// Generate Static Params
 export async function generateStaticParams() {
   const signs = [
     "capricorn",
