@@ -42,7 +42,7 @@ model User {
   name          String?
   email         String    @unique
   emailVerified DateTime?
-  password      String
+  password      String?
   image         String?
   createdAt     DateTime  @default(now()) // Automatically set current date time when creating new user
   credits       Credit[] // This line establishes a one-to-many relationship from User to Credit
