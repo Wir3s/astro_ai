@@ -35,7 +35,6 @@ export default function Header() {
             </li>
           )}
           <li>{session ? <LogoutButton /> : <LoginButton />}</li>
-          <Burgs />
         </ul>
       </nav>
     </header>
