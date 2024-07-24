@@ -67,17 +67,3 @@ export async function generateStaticParams() {
 
   return signs.map((sign) => ({ params: { sign } }));
 }
-
-// ISR: Revalidate every 60 seconds
-export async function getStaticProps({ params }) {
-  const { sign } = params;
-  const horoscope = await getHoroscope(sign);
-
-  return {
-    props: {
-      horoscope,
-      sign,
-    },
-    revalidate: 60, // Revalidate every 60 seconds
-  };
-}
