@@ -7,7 +7,9 @@ import Header from "../../components/Header";
 // Fetch Data
 async function getHoroscope(sign) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-  const res = await fetch(`${baseUrl}/data/horoscopes.json`);
+  const res = await fetch(`${baseUrl}/data/horoscopes.json`, {
+    cache: "no-store",
+  });
   console.log("Fetching horoscopes from:", `${baseUrl}/data/horoscopes.json`);
   if (!res.ok) {
     console.error("Failed to fetch data:", res.statusText);
