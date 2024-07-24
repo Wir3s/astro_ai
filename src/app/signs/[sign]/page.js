@@ -7,9 +7,7 @@ import Header from "../../components/Header";
 // Fetch Data
 async function getHoroscope(sign) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-  const res = await fetch(`${baseUrl}/data/horoscopes.json`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${baseUrl}/data/horoscopes.json`);
   console.log("Fetching horoscopes from:", `${baseUrl}/data/horoscopes.json`);
   if (!res.ok) {
     console.error("Failed to fetch data:", res.statusText);
@@ -68,4 +66,18 @@ export async function generateStaticParams() {
   ];
 
   return signs.map((sign) => ({ params: { sign } }));
+}
+
+// ISR: Revalidate every 60 seconds
+export async function getStaticProps({ params }) {
+  const { sign } = params;
+  const horoscope = await getHoroscope(sign);
+
+  return {
+    props: {
+      horoscope,
+      sign,
+    },
+    revalidate: 60, // Revalidate every 60 seconds
+  };
 }
