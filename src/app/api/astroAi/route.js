@@ -1,7 +1,6 @@
 // pages/api/queryOpenAI.js
 import { getSession } from "next-auth/react";
 
-import { Configuration, OpenAIApi } from "openai";
 
 export default async function handler(req, res) {
   const session = await getSession({ req });
