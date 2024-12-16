@@ -1,52 +1,55 @@
-// pages/api/queryOpenAI.js
-import { getSession } from "next-auth/react";
+// app/api/astroAi/route.js (Next.js 13 App Router style)
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"; // Adjust to where your auth config is
+import { PrismaClient } from "@prisma/client";
 
+const prisma = new PrismaClient();
 
-export default async function handler(req, res) {
-  const session = await getSession({ req });
-  if (session) {
-    try {
-      // Find available credit for the user
-      const availableCredit = await prisma.credit.findFirst({
-        where: {
-          userId: session.user.id,
-          used: false,
-        },
+export async function POST(request) {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    return new Response(JSON.stringify({ error: "Not authenticated" }), {
+      status: 401,
+    });
+  }
+
+  try {
+    const availableCredit = await prisma.credit.findFirst({
+      where: {
+        userId: session.user.id,
+        used: false,
+      },
+    });
+
+    if (!availableCredit) {
+      return new Response(JSON.stringify({ error: "No available credits" }), {
+        status: 403,
       });
-      if (!availableCredit) {
-        return res.status(403).json({ error: "No available credits" });
-      }
-
-      // Proceed with OpenAI API call
-      const openai = new OpenAIApi(
-        new Configuration({
-          apiKey: process.env.OPENAI_API_KEY,
-        })
-      );
-
-      const { prompt } = req.body;
-      const completion = await openai.createCompletion({
-        model: "text-davinci-003", // Specify the model
-        prompt, // Use the prompt from the request
-        max_tokens: 150, // Adjust as needed
-        temperature: 0.7, // Adjust for creativity
-      });
-
-      // Mark the credit as used
-      await prisma.credit.update({
-        where: { id: availableCredit.id },
-        data: { used: true },
-      });
-
-      // Send the response back to the client
-      res.status(200).json({ response: completion.data.choices[0].text });
-    } catch (error) {
-      console.error("Error:", error);
-      res
-        .status(500)
-        .json({ error: "An error occurred while processing your request" });
     }
-  } else {
-    res.status(401).json({ error: "Not authenticated" });
+
+    const { prompt } = await request.json();
+
+    // If you're no longer using OpenAI, remove that code. Otherwise, call it here:
+    // const completion = await openai.createCompletion({...});
+
+    // Mark the credit as used
+    await prisma.credit.update({
+      where: { id: availableCredit.id },
+      data: { used: true },
+    });
+
+    // Return a Response (instead of using res.status(...).json(...))
+    return new Response(JSON.stringify({ response: "some response text" }), {
+      status: 200,
+    });
+  } catch (error) {
+    console.error("Error:", error);
+    return new Response(
+      JSON.stringify({
+        error: "An error occurred while processing your request",
+      }),
+      { status: 500 }
+    );
   }
 }
