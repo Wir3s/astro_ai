@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve", // Enables JSX for React
+    "target": "esnext", // Specifies ECMAScript target version
+    "module": "esnext", // Specifies module code generation
+    "moduleResolution": "node", // Resolves modules in Node.js style
+    "strict": true, // Enables strict type-checking options
+    "allowJs": true, // Allows JavaScript files to be compiled
+    "skipLibCheck": true, // Skips type checking for declaration files
+    "esModuleInterop": true // Ensures compatibility with ES modules
+    ,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+, "src/app/page.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

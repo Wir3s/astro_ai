@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import styles from "../page.module.css";
@@ -8,35 +7,38 @@ import {
   LoginButton,
   LogoutButton,
 } from "../components/AuthButns/AuthButns.js";
-import Burgs from "../components/OpenMenu/OpenMenu";
+import { Suspense } from "react";
 
-export default function Header() {
-  const { data: session, status } = useSession();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(status === "loading");
-  }, [status]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+function HeaderContent() {
+  const { data: session } = useSession();
 
   return (
     <header className={styles.headerComponent}>
       <nav>
         <ul className={styles.navList}>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" prefetch>
+              Home
+            </Link>
           </li>
           {!session && (
             <li>
-              <Link href="/signup">Create Account</Link>
+              <Link href="/signup" prefetch>
+                Create Account
+              </Link>
             </li>
           )}
           <li>{session ? <LogoutButton /> : <LoginButton />}</li>
         </ul>
       </nav>
     </header>
+  );
+}
+
+export default function Header() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HeaderContent />
+    </Suspense>
   );
 }
