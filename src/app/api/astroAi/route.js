@@ -1,6 +1,6 @@
 // app/api/astroAi/route.js (Next.js 13 App Router style)
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"; // Adjust to where your auth config is
+import { authOptions } from "../../../../lib/authOptions"; // Adjust to where your auth config is
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
